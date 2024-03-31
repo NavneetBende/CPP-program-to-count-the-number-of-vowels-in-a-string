@@ -1,0 +1,43 @@
+#include <iostream> 
+  
+using namespace std;
+  
+int countVowels(char *chrPtr)
+{
+    // to count total number of vowels
+    int count = 0;
+  
+    // Keep reading each character till string terminates
+    // string will terminate when we read '\0'
+    while ((*chrPtr) != '\0') 
+    {
+        // convert to uppercase
+        (*chrPtr) = toupper((*chrPtr));
+        
+        // Check whether character pointer finds any vowels
+        if (*chrPtr == 'A' || *chrPtr == 'E' || *chrPtr == 'I'
+            || *chrPtr == 'O' || *chrPtr == 'U') {
+  
+            // if true then increment count
+            count++;
+        }
+  
+        // Move to next char of string by incrementing pointer val
+        // pointer now points to next node
+        chrPtr++;
+    }
+  
+    return count;
+}
+  
+// Driver Code
+int main()
+{
+    // Initialize the string
+    char str[] = "Prepinsta";
+  
+    // Display the count
+    cout << "Vowel Count: " << countVowels(str);
+  
+    return 0;
+}
